@@ -1,0 +1,97 @@
+
+Local 
+Remote
+
+Repository(repo, 저장소)
+Branch Repository의 공간에서 어떤 작업을 하기 위한 공간
+Commit 로컬저장소에는 변경 반영되지만 원격저장소에는 아직 반영되지 않은 상태
+Pull 원격저장소 내용을 로컬저장소로 끌어오는 것
+Push Commit한 내용을 원격저장소에 업로드
+
+
+1. 로컬저장소 생성
+- 일반적인 디렉토리를 git working tree로 만드는 방법
+
+git init  # input
+Initialized empty Git repository in "./path/.git/"
+
+
+2. Git Repo 만들기
+   - 깃허브 접속
+   - 왼쪽 상단 New 버튼 클릭 Create repositiry
+   
+3. 로컬저장소를 원격저장소에 연결
+git remote add "remote-name" "git address"
+
+git remote add gittest http://github.com/.../aa.git
+git push -u
+
+
+4. 원격 저장소 확인
+git remote --verbose
+
+
+5. 원격저장소 이름 변경
+git remote rename "old-remote-name" "new-remote-name"
+
+
+6. 원격연결 삭제
+git remote remove "remote-name"
+
+
+7. 파일 올리기
+git add "filename"
+git add .  # 한번에 stage에 올리기
+git add --all  # 한번에 stage에 올리기
+git add "./../*"  # 특정 디렉토리에 있는 문서만 올리기
+git add *.py  # .py만 올리기
+
+# 수정사항만 stage에 올리기
+git add --patch "filename"
+
+8. 상태확인
+git status
+
+
+9. stage에 올라간 파일을 Commit하기
+git commit -m "commit message"
+
+
+10. commit message 수정하기
+git commit --amend
+
+
+11. commit한 파일을 push해서 원격 저장소로 보내기
+git push "remote-name" "branch-name"
+
+git push gittest master
+
+
+12. 다른 코드들 clone하기
+git clone "git-address"
+
+git clone https://github.com/hijunsgit/gittest/python.git
+
+
+13. 원격저장소의 수정사항을 로컬로 가져오기 Pull & Fetch
+Pull: 원격저장소 변경된 정보를 확인하고 최신데이터를 복사하여 로컬git으로 가져옴
+Fetch: 원격저장소 변경사항이 있는 확인만 하고, 가져오지는 않는다.
+       따라서 Fetch 실행 후 Pull수행이 더욱 안전하다.
+
+git pull "remote-name" "branch-name"
+
+git pull gittest master
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
